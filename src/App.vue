@@ -2,10 +2,12 @@
 </script>
 
 <template>
-  <div>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/meter.svg" class="logo" alt="Intelligob" />
-    </a>
+  <div class="app-container" :class="authStore.user && 'bg-light'">
+    <!--Nav /-->
+    <!--Alert /-->
+    <div class="container pt-4 pb-4">
+      <router-view />
+    </div>
   </div>
 </template>
 
