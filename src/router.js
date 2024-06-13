@@ -45,12 +45,12 @@ export const router = createRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-    const alertStore = useAlertStore();
-    alertStore.clear(   );
+    /*const alertStore = useAlertStore();
+    alertStore.clear(   );*/
 
     const isPublic = to.matched.some(record => record.meta.public)
     const onlyWhenLoggedOut = to.matched.some(record => record.meta.onlyWhenLoggedOut)
-    const loggedIn = !!TokenService.getToken();
+    const loggedIn = false; // !!TokenService.getToken();
 
     if (!isPublic && !loggedIn) {
         return next({
